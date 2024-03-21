@@ -1,0 +1,336 @@
+<!DOCTYPE html>       <!-- This is to ensure that the web page is a HTML document-->
+<html>
+
+<head>                                                       <!-- Setting up some critical basics -->
+  <meta charset="utf-8">                                     <!-- Character set for the web page -->
+  <meta name="viewport" content="width=device-width">        <!-- Making it so the website is responsive to the user's device -->
+  <title>Admin Insights And Recipes</title>                            <!-- Title of the web page -->
+  <link href="style.css" rel="stylesheet" type="text/css" /> <!-- Be able to extract and use CSS sheets to style the HTML page -->
+</head>
+
+<style>                       /* This is the styling of the website */
+
+/* GENERAL STYLING FOR ALL HTML ELEMENTS */
+  
+* {                           /* All HTML elements of the web page follow this basic styling */   
+	padding: 0;                 /* Ensuring, unless otherwise, between HTML elements there is no gaps */
+	margin: 0;                  /* Ensuring no margins exists */
+  box-sizing: border-box;     /* Ensure that all HTML elements follow the border-box design */
+}                             /* End of the designing of all HTML elements */
+
+/* FOR THE MAIN WEB CONTENT OF THE PAGE STYLING */
+
+Section {                     /* This is for the main content of the web page which isn't the navigation bars or the banners */
+  width: 100%;                /* Ensuring that content of the web page fits the entire page */
+  max-width: 832px;           /* Constructing a max width to ensure it doesn't mess up the web page by going over */
+  height: 100vh;              /* The height of the web content is determined by the user's screen size to ensure responsiveness */
+  max-height: 450px;          /* Establishing a max height to avoid the web content to go across and into other content of the web page */
+  background: #ECF3F5;        /* This is the default background colour of the web content part of the web page */
+}                             /* End of the section for the web page content */
+
+/* FOR THE CSS DESIGN OF THE TOP NAVIGATIONAL BAR */
+  
+.TopNavigationBar {            /* This is a class established for the CSS styling of the top navigation bar */
+  list-style-type: none;       /* Ensure that when styling any lists for the navigation bar, there is none */
+  padding: 2em;                /* Padding between the content of the top navigation bar is measured by EM to better responsiveness in media queries */
+  overflow: hidden;            /* Ensuring that any overflow of any HTML elements are hidden to ensure a better UX design */
+  background-color: #05386B;   /* Establishing the background colour for the top navigation bar */
+  display: block;              /* Creating the top navigation bar as a block, to house in HTML content */
+  box-sizing: border-box;      /* Creating the top navigation bar in the form as a border-box to be better resized */
+  width: 100%;                 /* Ensuring that the top navigation bar go across the entire page */
+  max-height: 95%;             /* Ensuring that the height of the top navigation bar is suited for the user's screen size for responsiveness */
+}                              /* Ending of the top navigation bar */
+
+.TopUl {                       /* This is to CSS design the UL list that shall be implemented in the top navigational bar */
+  list-style-type: none;       /* This is ensuring that the UL list has no style type */
+  padding: 15px;               /* This is ensuring that elements of the list are spaced out by 15px */
+  overflow: hidden;            /* This is ensuring that any overflows aren't seen for a better optimised UX design */
+  display: block;              /* This is formulating the UL list as a block so it can contain HTML elements */
+  box-sizing: border-box;      /* This is ensuring that the UL is designed as a block to house other HTML elements */
+  position: relative;          /* This is ensuring that the position of the UL list is dependent on the screen size */
+  text-align: center;          /* This is ensuring that the text is aligned in the center */
+}                              /* End of the top UL */
+
+.TopButtons {                  /* This is the CSS for any buttons that shall be on the top navigation bar to the right */
+  background-color: #05386B;   /* Ensuring that the buttons blend in with the colour design of the top navigation bars */
+  border: none;                /* Ensuring that the buttons doesn't show a border around it for a smoother CSS design */
+  color: white;                /* White colouring for the text of the buttons */
+  text-align: center;          /* Putting the button's content in the middle */
+  text-decoration: none;       /* Eradicating any text decoration on the buttons */
+  display: inline-block;       /* Creating it as an inline block so it'll be compatible to the block elements */
+  float: right;                /* Making it float to the right */
+  font-size: 15px;             /* Sizing of the buttons content */
+  padding: 10px 20px;          /* The space between any more HTML submit buttons */
+  cursor: pointer;             /* Making it so if they do hover over the button, it'll change to a pointer cursor */
+  font-size: 1.5vw;            /* Making the font size responsive to the user's screen size */
+}                              /* End of the top buttons CSS design */
+
+
+.TopButtons1 {                 /* This is the CSS design for the buttons of the top navigation bar to the left */
+  background-color: #05386B;   /* This provides the background colour so it'll blend in with the navigation bar */
+  border: none;                /* Ensures there's no border around the HTML elements  */
+  color: white;                /* Creates the text into white */
+  text-align: center;          /* This ensures all content to be directed to the middle */
+  text-decoration: none;       /* Removes any traces of text decoration for the buttons */
+  display: inline-block;       /* Allows the HTML element to be fitted into the navigation bar */
+  float: left;                 /* It'll float to the left by default */
+  font-size: 1.5vw;            /* Making it so the text size is dependent on the screen size, responsiveness */
+  padding: 10px 20px;          /* Creating space between the HTML elements */
+}                              /* End of the top buttons design */
+
+/* DESIGN FOR THE SECONDARY NAVIGATION BAR */
+
+.SecondaryNavigationBar {      /* This is the CSS design for the secondary navigation bar */
+  list-style-type: none;       /* Ensuring all HTML elements doesn't have a list style type to it */
+  padding: 1.25em;             /* Space between the HTML elements in the secondary navigaton bar and around HTML elements */
+  overflow: hidden;            /* Ensuring that any overflows aren't seen to the user for a better design experience */
+  background-color: #379683;   /* Provides the background colour for the navigation bar */
+  display: block;              /* Makes the navigation bar as a block to allow other HTML elements to be embedded inside of it */
+  box-sizing: border-box;      /* Formats the navigation bar as a border box to align itself better on the web page */
+  float: left;                 /* By default, making the navigation bar move to the left */
+  width: 100%;                 /* Ensure that the navigation bar span across the web page */
+  height: 60px;                /* This is the height of the navigation bar */
+  max-height: 95%;             /* Height shall automatically fit to the screen according to the user screen size */
+}                              /* Ending of the design for the navigation bar */
+
+.SecondaryUl {                 /* Designing of the UL for the navigation bar */
+  list-style-type: none;       /* Ensuring all HTML elements doesn't have a list style type */
+  padding: 15px;               /* Spacing of the HTML elements that are a part of the UL */
+  overflow: hidden;            /* Ensure that any overflows are hidden from the user's eye to improve the CSS design */
+  display: block;              /* As a block, it'll allow HTML element to be inside of the UL list for the navigation bar */
+  box-sizing: border-box;      /* As a border-box, it'll fit more well proportionally to the web page */
+  position: relative;          /* Ensure that their position is at the right place despite of the device and screen size */
+  text-align: center;          /* Ensuring that all content is directed to the middle for better design */
+  top: -20px;                  /* Putting all content above so it's seenable for the user */
+}                              /* End of the UL for the navigation bar */
+
+.SecondaryButtons {            /* This is the CSS design for the secondary navigation bar buttons */
+  background-color: #379683;   /* Colour so that the buttons fit with the background */
+  border: none;                /* Ensuring no border design to better the design of the buttons */
+  color: white;                /* Making the text white for the user to be able to notice it */
+  font-weight: bold;           /* Emphasising the design of the text */
+  text-align: center;          /* Ensuring the content is directed towards the middle */
+  text-decoration: none;       /* Ensuring there is no text decoration for the text */
+  display: inline;             /* Inline so it can be a part of the block element */
+  float: left;                 /* Ensuring all buttons are shifted to the left */
+  font-size: 1.25vw;           /* Font size is dependent on the screen size, improving responsiveness */
+  padding: 10px 20px;          /* Spacing between the HTML elements to ease the visibility of the navigational bar */
+  cursor: pointer;             /* Making it so when hovering above the button, there's a pointer cursor */
+}                              /* End of the CSS design for the secondary buttons of the secondary navigation bar */
+
+/* CSS DESIGN FOR THE MAIN CONTENT OF THE WEB PAGE */
+
+.AdminPage {                          /* CSS for the main DIV block that'll hold other HTML elemets */
+  padding: 3.75%;                     /* Padding for DIV block */                    
+  display: grid;                      /* Displayed as grid with 3 columns */
+  grid-template-columns: 3 1fr;      
+  grid-column-gap: 20px;              /* Column gaps and row gaps 20px, font-size responsive */
+  grid-row-gap: 20px;                       
+  font-size: 1.5vw;                   
+  color: white;                       /* Text is white, display as flex */                  
+  display: flex;                       
+  flex-direction: row;                /* Flex row, center content, aligning items */
+  justify-content: center;            
+  align-items: center;              
+}                                     /* End of the CSS for main DIV block */
+  
+.grid_item {                          /* Grid item to create HTML elements */
+  background-color: royalblue;        /* BG colour, text colour, border is black solid */
+  color: white;                       
+  border: black solid;                
+  text-align: center;                 /* Text aligned to center */
+  grid-column: 1/3;                   /* Taking a specific column, width is responsive */
+  width: 55%;                        
+}                                     /* End of CSS for the grid item */
+  
+.AdminPageUL {                        /* CSS for list to hold the entry boxes */
+  list-style-type: none;              /* No list style, padding 15px, hidden overflow, display as block */
+  padding: 15px;                     
+  overflow: hidden;                    
+  display: block;                   
+  box-sizing: border-box;             /* Box sizing border box, relative position, text aligned to center, float to left */
+  position: relative;              
+  text-align: center;               
+  float: left;                      
+}                                     /* End of CSS for list */
+
+.AdminEntries {                       /* CSS design for the HTML elements/form boxes to take in information */
+  background-color: white;            /* BG is white, border-box is black solid, text is black, no text decoration */
+  border-box: black solid;       
+  color: black;                  
+  text-decoration: none;       
+  display: inline;                    /* Display as inline, responsive font size, float to right */
+  font-size: 1.25vw;          
+  float: right;                
+}                                     /* End of CSS design for form boxes/HTML elements */
+
+.TextBoxes {                          /* CSS design for text box */
+  box-sizing: border-box;             /* Box sizing is border box, responsive width and height */
+  max-width: 50%;          
+  max-height: 50%;      
+}                                     /* End of CSS design for text box */
+  
+@media only screen and (min-width: 320px) and (max-width: 480px) {      /* Media query for responsiveness */
+  .textboxes {                                                          /* Changes textbox height if it's on this screen size */
+    height: 25%;
+  }                                                                     /* End of media query */
+}                                                                       /* End of CSS for the insights and recipes page */
+
+/* END OF CSS DESIGN FOR THE INSIGHTS AND RECIPES PAGE */
+
+/* CSS DESIGN FOR THE BOTTOM BANNER */
+
+
+.BottomBannerBar {                             /* This is the CSS styling for the bottom banner */
+  list-style-type: none;                       /* Means that there is no styling type for any lists */
+  padding: 2em;                                /* Padding can be more responsive by using the measurement of EM */
+  overflow: hidden;                            /* Any overflow are eradicated to maximise UI designs */
+  background-color: #05386B;                   /* Colouring of the bottom banner */
+  display: block;                              /* Make it a block element to be able to fit in HTML elements inside */
+  box-sizing: border-box;                      /* As it's a border-box, it's more editable */
+  float: left;                                 /* Make it automatically move to the left */
+  width: 100%;                                 /* Ensure to make it span across the entire screen */
+  max-height: 95%;                             /* Ensure that the height fits with the user's device */
+  text-align: center;                          /* Any content is centered towards the middle */
+  font-size: 1em;                              /* Makes the content much more responsive as it's dependent on the screen size */
+  position: fixed;                             /* Ensures that the bottom banner doesn't move elsewhere */
+  bottom: 0;                                   /* Ensure the banner is at the very bottom */
+  height: 1.25em;                              /* Creating the height of the banner */
+  margin-top: -100px;                          /* Ensuring that the banner is within the web page */
+  clear: both;                                 /* Any overflowing elements are eliminated */
+}                                              /* End of the bottom banner CSS design */
+
+.BottomUl {                                    /* This is the CSS design for the list incoporated in the bottom banner */
+  list-style-type: none;                       /* Ensure there is no list style type to the content */
+  padding: 15px;                               /* Spacing between HTML elements in the bottom banner */
+  overflow: hidden;                            /* Ensures that any overflowing HTML elements are eliminated */
+  display: inline;                             /* Allows it to be inside of the bottom banner */
+  box-sizing: border-box;                      /* Allows it to be editable more easily */
+  position: relative;                          /* It's position is dependent on the screen size */
+  text-align: center;                          /* All content is directed to the middle */
+  top: -25px;                                  /* Ensure that the content of the UL is visible to the user and not underneath */
+}                                              /* End of the CSS design for the UL */
+
+.BottomButtons1 {                              /* This is the CSS design for the bottom buttons for the bottom banner */
+  background-color: #05386B;                   /* Ensure that they blend in with the banner */
+  border: none;                                /* No border design */
+  color: white;                                /* Ensure all content is white */
+  text-align: center;                          /* Content is centered towards the middle */
+  text-decoration: none;                       /* Ensure there is no decoration attached to the text */
+  display: inline-block;                       /* Ensure that they're compatible within the block elements */
+  float: left;                                 /* Automatically move to the left */
+  font-size: 15px;                             /* This is the sizing of the content */
+  padding: 10px 20px;                          /* Spacing of the content */
+  cursor: pointer;                             /* For any buttons, shall be noticeable with this cursor */
+}                                              /* This is for the buttons on the left */
+
+.BottomButtons2 {                              /* This is for the payment options on the right */
+  background-color: #05386B;                   /* Ensure they blend in with the background */
+  border: none;                                /* No border designs */
+  color: white;                                /* Ensure that all content is white */
+  text-align: center;                          /* Direct the content towards the middle */
+  text-decoration: none;                       /* No decoration attached to the text */
+  display: inline-block;                       /* Ensure that the HTML elements are compatible with the block elements */
+  float: right;                                /* Ensure they're on the right side of the bottom banner */
+  font-size: 15px;                             /* This is the sizing of the content within the bottom banner */
+  padding: 10px 20px;                          /* This is for the spacing between HTML elements within the bottom banner */
+}                                              /* End of the CSS design for the payment options */
+</style>                                       <!-- End of all CSS design -->
+
+<body>                                         <!-- Main body of content for the web page -->
+
+<!-- TOP NAVIGATION BAR-->
+  
+  <div class="TopNavigationBar">               <!-- Creation of the top navigational bar -->
+    
+    <ul class="TopUl">                         <!-- The UL list for all buttons and images -->
+    <img class="TopButtons1" src="{{ url_for('static', filename='Logo.png')}}" alt="Rice Cooker Logo">
+    <!-- The image for the rice cooker logo by accessing the static folder, giving it TopButtons1 CSS design -->
+     <div class="TopButtons1">
+       <!-- Giving this TopButtons1 design -->
+      <h3 style="display: inline; color: white; background: #05386B;"> Nothing more to life than rice... </h3>
+       <!-- Inline styling for the content -->
+    </div>
+      <!-- Company slogan -->
+    
+       <div class="TopButtons1">
+         <!-- Providing the CSS design of TopButtons1 -->
+     </div>
+      <!-- Partner with UNICEF shout out -->
+      
+      <form method="get" action="/ActuallyLoggedOut"> <!-- HTTP request to the server to be able to get to their account page -->
+        <button class="TopButtons" type="Submit"> <!-- Ensure it has the CSS design of TopButtons -->
+        <img src="{{ url_for('static', filename='Account.png')}}" alt="Account icon"> </button> <!-- Getting the image from the static folder -->
+      </form> <!-- End of the HTML form element -->
+
+      <!-- HTML submit button to go onto their account -->
+
+    </ul> <!-- End of the UL list -->
+  </div> <!-- End of the top navigation bar -->
+
+<!-- SECONDARY NAVIGATION BAR -->
+
+  <div class="SecondaryNavigationBar"> <!-- Holds the CSS design of the secondary navigation bar -->
+    <ul class="SecondaryUl"> <!-- For the UL list CSS design and to hold other HTML elements -->
+      <form method="get" action="/AdminAnalysis"> <!-- Get request to the server for the home page -->
+        <button type="submit" class="SecondaryButtons"> ANALYSIS </button> <!-- CSS design of the home button -->
+      </form> <!-- End of the HTML form element -->
+
+    <!-- HTML submit button to the home page -->
+
+      <form method="get" action="/AdminInsightsAndRecipes"> <!-- Get request to the server for the about us page -->
+        <button type="submit" class="SecondaryButtons"> INSIGHTS AND RECIPES </button> <!-- CSS design for the about us page button -->
+      </form> <!-- End of the HTML submit form button -->
+
+    <!-- HTML submit button to the about us page -->
+
+    </ul> <!-- End of the UL -->
+  </div> <!-- End of the secondary navigation bar -->
+
+<!-- HTML CODE FOR THE ADMIN PAGE -->
+
+<div class="AdminPage">      <!-- Using CSS class AdminPage to create the main DIV block -->
+  <div class="grid_item">    <!-- Grid item for the content of the admin page -->
+    <p style="font-size: 2.5vw;"> ADMIN INSIGHTS AND RECIPES </p>      <!-- Title for the admin insights and recipes page -->
+    
+    <ul class="AdminPageUL">                        <!-- UL for all of the forms, POST method -->
+      <form action="#" method="post">                    
+        <label for="TITLE"> INSIGHTS AND RECIPES TITLE </label>  <!-- Label created -->
+        <input style="border: black solid; text-align: center;" class="AdminEntries" autocomplete="off" type="text" name="TITLE" id="TITLE" value="">
+        <br></br> <!-- Input box for the admin to type in the title of the insights and recipes post -->
+
+        <textarea class="TextBoxes AdminEntries" id="BLOG" rows=10 cols=60 name="BLOG" style="overflow: auto; background-color: white; resize: none; border: black solid; text-align: left;">  
+        </textarea> <!-- Text area for the admin to type in their insights and recipes post itself -->
+        <p style="color: white; font-size: 1vw;"> TYPE IN NEW INSIGHTS AND RECIPES HERE </p> 
+        <br></br> <!-- Title for the text area for the admin to type into -->
+        <p style="color: white; font-size: 1vw;"> {{ERRORMESSAGE}} </p> 
+        <br></br> <!-- HTML variable error message -->
+        <input type="submit" value="  SUBMIT  " style="background-color: royalblue; color: white; font-size: 2vw; cursor: pointer; border: royalblue solid; top: 100px;"/> <!-- Submit button and CSS for submit button for the admin to send all of the information to the server -->
+      </form> <!-- End of form -->
+    </ul> <!-- End of list -->
+  </div> <!-- End of grid item -->
+</div> <!-- End of DIV block -->
+
+<!-- BOTTOM BANNER OF THE WEB PAGE -->
+
+  <div class="BottomBannerBar"> <!-- Provides it the CSS design for the bottom banner -->
+    <ul class="BottomUl"> <!-- Provides the UL to house the HTML elements -->
+      <a class="BottomButtons1" href="https://twitter.com/home"> <!-- Link to Twitter -->
+      <img src="{{ url_for('static', filename='Twitter.png')}}" alt="Twitter"> <!-- Image of Twitter from static folder -->
+      </a> <!-- End of button -->
+
+      <a class="BottomButtons1" href="https://www.instagram.com/"> <!-- Link to Instagram -->
+      <img src="{{ url_for('static', filename='Instagram.png')}}" alt="Instagram"> <!-- Image of Instagram from static folder -->
+      </a> <!-- End of social media outreach -->
+
+      <a class="BottomButtons1" href="https://www.youtube.com/"> <!-- Link to YouTube -->
+      <img src="{{ url_for('static', filename='YouTube.png')}}" alt="YouTube"> <!-- Image of YouTube from static folder -->
+      </a> <!-- End of promotion of enterprise socials -->
+
+      <img class="BottomButtons2" src="{{ url_for('static', filename='Mastercard.png')}}" alt="Mastercard"> <!-- Image of Mastercard payment -->
+      <img class="BottomButtons2" src="{{ url_for('static', filename='Paypal.png')}}" alt="Paypal"> <!-- Image of Paypal payment -->
+      <img class="BottomButtons2" src="{{ url_for('static', filename='Apple.png')}}" alt="Apple"> <!-- Image of Apple payment -->
+    </ul> <!-- End of UL list -->
+  </div> <!-- End of bottom banner content and design -->
+</body> <!-- End of the web page content -->
+</html> <!-- End of the HTML page -->
